@@ -75,11 +75,10 @@ function handleCM(event) {
 }
 
 function handleSaveClick() {
-  const image = canvas.toDataURL();
-  const link = document.createElement("a");
-  link.href = image;
-  link.download = "PaintJS[🖌]";
-  link.click();
+  const a = document.createElement("a");
+  a.href = canvas.toDataURL("image/png");
+  a.download = "PaintJS[🖌]";
+  a.click();
 }
 if (canvas) {
   canvas.addEventListener("mousemove", onMouseMove);
